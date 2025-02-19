@@ -7,104 +7,62 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
             text-align: center;
+            background-color: #d6f5ff;
         }
         header {
             background-color: #0073e6;
             color: white;
             padding: 20px;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #0073e6;
-        }
-        a {
-            text-decoration: none;
-            color: #0073e6;
-            font-weight: bold;
-        }
-        .contact {
-            margin-top: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background: #0073e6;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin: 5px;
-        }
-        .btn:hover {
-            background: #005bb5;
-        }
-        .blog-section {
-            margin-top: 30px;
-            padding: 20px;
-            background: #e6f2ff;
-            border-radius: 10px;
-        }
-        .profile-img {
+        .profile {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            margin-top: 10px;
         }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .btn-pub { background-color: #d63384; }
+        .btn-research { background-color: #28a745; }
+        .btn-contact { background-color: #0073e6; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Dr. Aimad Koulali</h1>
-    <p>Dr. Aimad Koulali</p>
-     <p>Researcher in CFD & Heat Transfer</p>
+    <p>CFD & Heat Transfer Specialist</p>
 </header>
 
-<div class="container">
-    <img src="image-CFD.wnbg" alt="Profile Picture" class="profile-img">
-    <h2>About Me</h2>
-    <p>I hold a Ph.D. in Mechanical Engineering with a specialization in Computational Fluid Dynamics (CFD) and heat transfer. 
-        I have strong expertise in numerical modeling and simulation, particularly using ANSYS Fluent and COMSOL Multiphysics, and an intermediate proficiency in OpenFOAM. Additionally, I am proficient in Finite Volume Method (FVM) coding for CFD applications.I am also expanding my knowledge in Machine Learning (ML) for CFD through online courses and have experience implementing optimization algorithms in Python. 
-    I have published multiple research papers and presented my work at major conferences, demonstrating my commitment to advancing innovative engineering solutions.
-Currently, I am working on multivariate Population Balance Modeling (PBM) for bioleaching applications.</p>
-    <p>🔹 ANSYS Fluent, OpenFOAM, Python, Matlab</p>
-    
-    <h2>Current Position</h2>
-    <p>📌 <strong>Postdoctoral Researcher |Institut Jean Lamour, Université de Lorraine, CNRS</strong></p>
-    <p>Multivariate PBM for Bioleaching application.</p>
-    
-    <h2>CFD & Heat Transfer</h2>
-    <img src="cfd-heat-transfer-image.jpg" alt="CFD and Heat Transfer Applications" width="100%">
-    
-    <h2>Publications</h2>
-    <p>📄 <a href="https://scholar.google.com/citations?user=nn7F88QAAAAJ&hl=en" target="_blank">View My Publications</a></p>
-    
-    <h2>Blog & Articles</h2>
-    <div class="blog-section">
-        <p>📝 This section will contain blogs, articles, and thoughts about CFD, heat transfer, and numerical simulations.</p>
-        <p>Stay tuned for upcoming posts!</p>
-    </div>
+<img src="image-CFD.png" alt="Dr. Aimad Koulali" class="profile">
 
-    <h2>Contact</h2>
-    <p>📧 Email: <a href="mailto:koumaimad06@gmail.com">koumaimad06@gmail.com</a></p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/aimad-koulali-47703328b" target="_blank">View Profile</a></p>
-    <p>📌 ORCID: <a href="https://orcid.org/0000-0003-0996-8221" target="_blank">ORCID Profile</a></p>
-
-    <div class="contact">
-        <a href="https://www.linkedin.com/in/aimad-koulali-47703328b" class="btn" target="_blank">LinkedIn</a>
-        <a href="mailto:koumaimad06@gmail.com" class="btn">Email</a>
-    </div>
+<div class="buttons">
+    <a href="publications.html" class="btn btn-pub">Publications</a>
+    <a href="research.html" class="btn btn-research">Research</a>
+    <a href="contact.html" class="btn btn-contact">Contact</a>
 </div>
+
+<h2>Research Interests</h2>
+<ul>
+    <li>Computational Fluid Dynamics (CFD)</li>
+    <li>Population Balance Modeling (PBM)</li>
+    <li>Heat Transfer & Multiphase Flows</li>
+</ul>
 
 </body>
 </html>
