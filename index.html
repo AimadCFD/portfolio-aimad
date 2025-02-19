@@ -8,13 +8,23 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #d6f5ff;
+            background-color: #90EE90; /* Vert clair */
             margin: 0;
+            color: black;
         }
         header {
             background-color: #0073e6;
             color: white;
             padding: 20px;
+        }
+        .social-links {
+            margin: 10px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
         }
         .profile {
             width: 150px;
@@ -48,6 +58,7 @@
         .btn-research { background-color: #28a745; }
         .btn-edu { background-color: #17a2b8; }
         .btn-contact { background-color: #0073e6; }
+        .btn-blog { background-color: #ffa500; }
         .section {
             display: none;
             padding: 20px;
@@ -57,6 +68,7 @@
             max-width: 800px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
         }
     </style>
 </head>
@@ -65,6 +77,13 @@
 <header>
     <h1>Dr. Aimad Koulali</h1>
     <p>CFD & Heat Transfer Specialist</p>
+    <p><strong>Current Position:</strong> Postdoctoral Researcher at Université de Lorraine, CNRS</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/aimad-koulali-47703328b" target="_blank">LinkedIn</a> |
+        <a href="https://orcid.org/0000-0003-0996-8221" target="_blank">ORCID</a> |
+        <a href="#" target="_blank">Scopus</a> |
+        <a href="https://scholar.google.com/citations?user=nn7F88QAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    </div>
 </header>
 
 <img src="moi.png" alt="Dr. Aimad Koulali" class="profile">
@@ -74,6 +93,7 @@
     <div class="btn btn-research" onclick="showSection('research')">Research</div>
     <div class="btn btn-edu" onclick="showSection('education')">Education</div>
     <div class="btn btn-contact" onclick="showSection('contact')">Contact</div>
+    <div class="btn btn-blog" onclick="showSection('blog')">Blog</div>
 </div>
 
 <div id="publications" class="section">
@@ -87,6 +107,7 @@
         <li>Computational Fluid Dynamics (CFD)</li>
         <li>Population Balance Modeling (PBM) for bioleaching applications</li>
         <li>Heat Transfer & Multiphase Flows</li>
+        <li>Finite Volume Method (FVM) for numerical simulations</li>
     </ul>
 </div>
 
@@ -100,6 +121,12 @@
     <p>📧 Email: <a href="mailto:koumaimad06@gmail.com">koumaimad06@gmail.com</a></p>
     <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/aimad-koulali-47703328b" target="_blank">View my profile</a></p>
     <p>📌 ORCID: <a href="https://orcid.org/0000-0003-0996-8221" target="_blank">ORCID Profile</a></p>
+</div>
+
+<div id="blog" class="section">
+    <h2>Blog - CFD & Numerical Simulations</h2>
+    <p>Here you will find articles, thoughts, and small applications related to CFD and numerical simulations.</p>
+    <p>📝 <a href="#">Read my latest posts</a></p>
 </div>
 
 <script>
