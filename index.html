@@ -31,7 +31,7 @@
             position: absolute;
             top: 10px;
             right: 20px;
-            width: 400px;
+            width: 200px;
         }
         .profile {
             width: 150px;
@@ -77,6 +77,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             color: black;
         }
+        .btn-editor { background-color: #6f42c1; } /* Purple button */
+
     </style>
 </head>
 <body>
@@ -136,6 +138,14 @@
     <p>Here you will find articles, thoughts, and small applications related to CFD and numerical simulations.</p>
     <p>📝 <a href="#">Read my latest posts</a></p>
 </div>
+    <div id="guest-editor" class="section">
+    <h2>Guest Editor - Special Issue</h2>
+    <p>I am currently serving as a Guest Editor for the Special Issue:</p>
+    <p><strong>🌍 Sustainability Journal - "Advances in Computational Modeling for Sustainable Engineering"</strong></p>
+    <p>📄 <a href="https://www.mdpi.com/journal/sustainability/special_issues/12ZIN5WVG4" target="_blank">View Special Issue</a></p>
+</div>
+
+<div class="btn btn-editor" onclick="showSection('guest-editor')">Guest Editor</div>
 
 <script>
     function showSection(sectionId) {
