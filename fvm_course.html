@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FVM Course - Finite Volume Method</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0073e6;
+        }
+        footer {
+            background-color: #0073e6;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: yellow;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Finite Volume Method (FVM) Course</h1>
+    <p>Learn the Finite Volume Method for solving partial differential equations in engineering applications.</p>
+</header>
+
+<div class="content">
+    <h2>1. Introduction to FVM</h2>
+    <p>The Finite Volume Method (FVM) is a widely used technique for solving partial differential equations, especially in fluid dynamics and heat transfer. FVM works by dividing the computational domain into control volumes, ensuring the conservation of quantities (such as mass, energy, or momentum) at the control volume level.</p>
+    <p>Why use FVM?</p>
+    <ul>
+        <li>It ensures conservation laws are respected.</li>
+        <li>Flexible for complex geometries and unstructured grids.</li>
+        <li>Widely used in Computational Fluid Dynamics (CFD) and heat transfer problems.</li>
+    </ul>
+
+    <h2>2. Governing Equations and FVM Application</h2>
+    <p>In FVM, we solve conservation laws. The general form of a conservation equation is:</p>
+    <pre>∂φ/∂t + ∇·(vφ) = ∇·(D∇φ) + S</pre>
+    <p>Where:
+        <ul>
+            <li>φ: Scalar variable (e.g., temperature or concentration)</li>
+            <li>v: Velocity vector</li>
+            <li>D: Diffusivity</li>
+            <li>S: Source term</li>
+        </ul>
+    </p>
+    <p>In this course, we'll focus on solving the energy equation for steady-state heat conduction in a 2D solid domain.</p>
+
+    <h2>3. Discretization in FVM</h2>
+    <p>To apply FVM, the continuous governing equations are discretized. The process involves dividing the domain into control volumes (CVs) and integrating the governing equations over each control volume.</p>
+    <p>Key steps in discretization:</p>
+    <ul>
+        <li>Divide the domain into control volumes.</li>
+        <li>Apply the divergence theorem to convert volume integrals to surface integrals.</li>
+        <li>Discretize the fluxes through the control volume faces.</li>
+    </ul>
+
+    <h2>4. FVM Applied to the Energy Equation (2D Example)</h2>
+    <p>The steady-state heat conduction equation is:</p>
+    <pre>∇·(k∇T) = 0</pre>
+    <p>Using the Finite Volume Method, the temperature field is updated iteratively by solving the discretized form of the equation for a 2D domain.</p>
+    <p>You can execute the Python code separately to obtain the solution and plot the temperature distribution for the 2D domain.</p>
+
+    <h2>5. Summary and Applications of FVM</h2>
+    <p>The Finite Volume Method is a robust technique for solving PDEs, particularly in fluid dynamics and heat transfer problems. It ensures conservation of quantities and is highly flexible for complex geometries and unstructured grids. Common applications include:</p>
+    <ul>
+        <li>Heat conduction problems (as shown in this example).</li>
+        <li>Computational Fluid Dynamics (CFD) problems like fluid flow and turbulence modeling.</li>
+        <li>Particle tracking and environmental simulations.</li>
+    </ul>
+</div>
+
+<footer>
+    <p>📧 Email: <a href="mailto:koumaimad06@gmail.com">koumaimad06@gmail.com</a></p>
+    <p>📞 Tel: +33 759 8704 91</p>
+</footer>
+
+</body>
+</html>
