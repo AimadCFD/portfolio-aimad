@@ -51,43 +51,83 @@
 </header>
 
 <div class="content">
-    <h2>1. Introduction to FVM</h2>
-    <p>The Finite Volume Method (FVM) is a widely used technique for solving partial differential equations, especially in fluid dynamics and heat transfer. FVM works by dividing the computational domain into control volumes, ensuring the conservation of quantities (such as mass, energy, or momentum) at the control volume level.</p>
-    <p>Why use FVM?</p>
-    <ul>
-        <li>It ensures conservation laws are respected.</li>
-        <li>Flexible for complex geometries and unstructured grids.</li>
-        <li>Widely used in Computational Fluid Dynamics (CFD) and heat transfer problems.</li>
-    </ul>
-
-    <h2>2. Governing Equations and FVM Application</h2>
-    <p>In FVM, we solve conservation laws. The general form of a conservation equation is:</p>
-    <pre>∂φ/∂t + ∇·(vφ) = ∇·(D∇φ) + S</pre>
+    <h2>1. Introduction to Diffusion Problems</h2>
+    <p>The Finite Volume Method (FVM) is a numerical technique for solving partial differential equations (PDEs) that govern physical processes such as heat conduction, fluid flow, and species transport. In this chapter, we focus on applying FVM to diffusion problems.</p>
+    <p>The general form of the transport equation for a scalar property \(\phi\) (like temperature or concentration) is:</p>
+    <pre>∂φ/∂t + ∇·(uφ) = ∇·(Γ∇φ) + S</pre>
     <p>Where:
         <ul>
-            <li>φ: Scalar variable (e.g., temperature or concentration)</li>
-            <li>v: Velocity vector</li>
-            <li>D: Diffusivity</li>
+            <li>φ: Scalar property (e.g., temperature or concentration)</li>
+            <li>u: Velocity vector</li>
+            <li>Γ: Diffusion coefficient</li>
             <li>S: Source term</li>
+            <li>t: Time</li>
         </ul>
     </p>
-    <p>In this course, we'll focus on solving the energy equation for steady-state heat conduction in a 2D solid domain.</p>
+    <p>For steady-state diffusion, the equation simplifies to:</p>
+    <pre>∇·(Γ∇φ) = 0</pre>
 
-    <h2>3. Discretization in FVM</h2>
-    <p>To apply FVM, the continuous governing equations are discretized. The process involves dividing the domain into control volumes (CVs) and integrating the governing equations over each control volume.</p>
-    <p>Key steps in discretization:</p>
-    <ul>
-        <li>Divide the domain into control volumes.</li>
-        <li>Apply the divergence theorem to convert volume integrals to surface integrals.</li>
-        <li>Discretize the fluxes through the control volume faces.</li>
-    </ul>
-
-    <h2>4. FVM Applied to the Energy Equation (2D Example)</h2>
-    <p>The steady-state heat conduction equation is:</p>
-    <pre>∇·(k∇T) = 0</pre>
-    <p>Using the Finite Volume Method, the temperature field is updated iteratively by solving the discretized form of the equation for a 2D domain.</p>
-
+    <h2>2. FVM for One-Dimensional Steady-State Diffusion</h2>
+    <p>Let’s now look at the application of the Finite Volume Method for solving this equation in a one-dimensional domain. Consider a steady-state diffusion problem in a one-dimensional rod.</p>
     
+    <h3>Step 1: Mesh Generation</h3>
+    <p>Divide the domain into control volumes, placing nodes at discrete points along the length of the rod. The faces of the control volumes are placed halfway between adjacent nodes.</p>
+
+    <h3>Step 2: Discretization</h3>
+    <p>The FVM involves integrating the governing equation over each control volume. For a one-dimensional diffusion problem, the discretized equation is:</p>
+    <pre>a_W φ_W + a_E φ_E = a_P φ_P + S</pre>
+    <p>Where:
+        <ul>
+            <li>φ_W, φ_E, φ_P: The values of φ at the west, east, and central nodes, respectively.</li>
+            <li>a_W, a_E, a_P: The coefficients for the respective faces and central node, based on the diffusion coefficient Γ and grid spacing.</li>
+        </ul>
+    </p>
+
+    <h3>Step 3: Solution</h3>
+    <p>After discretization, we have a system of algebraic equations that can be solved using suitable numerical methods (e.g., Gaussian elimination or iterative solvers).</p>
+
+    <h2>3. FVM for Two-Dimensional and Three-Dimensional Diffusion</h2>
+    <p>The method used for one-dimensional problems can easily be extended to two-dimensional and three-dimensional domains.</p>
+
+    <h3>Two-Dimensional Diffusion Equation</h3>
+    <p>For a steady-state two-dimensional diffusion problem, the equation becomes:</p>
+    <pre>Γ(∂²φ/∂x² + ∂²φ/∂y²) = 0</pre>
+    <p>The discretization involves contributions from the neighboring nodes in both x- and y-directions.</p>
+
+    <h3>Three-Dimensional Diffusion Equation</h3>
+    <p>For a steady-state three-dimensional diffusion problem, the equation is:</p>
+    <pre>Γ(∂²φ/∂x² + ∂²φ/∂y² + ∂²φ/∂z²) = 0</pre>
+    <p>The discretization process involves contributions from the neighboring nodes in all three directions.</p>
+
+    <h2>4. First Application: Heat Conduction in a Rod</h2>
+    <p>Let’s consider a simple application of the method to heat conduction in a rod. The rod has fixed temperatures at both ends, and we need to compute the steady-state temperature distribution along its length.</p>
+
+    <h3>Governing Equation</h3>
+    <p>The heat conduction equation in steady-state, with no source term, is:</p>
+    <pre>d²T/dx² = 0</pre>
+    
+    <h3>Boundary Conditions</h3>
+    <p>Given the following boundary conditions:
+        <ul>
+            <li>T(0) = 100°C (temperature at one end)</li>
+            <li>T(L) = 500°C (temperature at the other end)</li>
+        </ul>
+    </p>
+    
+    <h3>Step 1: Mesh Generation</h3>
+    <p>Discretize the length of the rod into \(N\) nodes, where \(L\) is the total length.</p>
+
+    <h3>Step 2: Discretization</h3>
+    <p>Using the FVM, the discretized form of the temperature equation is:</p>
+    <pre>a_W T_W + a_E T_E = a_P T_P</pre>
+    <p>Where the coefficients are determined by the thermal conductivity \(k\) and the grid spacing \(dx\).</p>
+
+    <h3>Step 3: Solution</h3>
+    <p>The system of equations can be solved iteratively or using direct methods to obtain the temperature distribution \(T(x)\).</p>
+
+    <h2>5. Conclusion and Applications</h2>
+    <p>The Finite Volume Method is a versatile and effective approach for solving diffusion problems, particularly when dealing with complex geometries and boundary conditions. It can be applied to one-dimensional, two-dimensional, and three-dimensional problems, such as heat conduction in solids, species diffusion, and other transport phenomena.</p>
+    <p>By discretizing the governing equations and solving the resulting algebraic system, FVM provides a powerful framework for numerical simulations in various engineering fields.</p>
 </div>
 
 <footer>
